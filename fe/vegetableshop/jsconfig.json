@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES6",
+    //  các tệp nguồn sẽ được tìm kiếm trong thư mục "src"
+    "baseUrl": "./src"
+  },
+  "include": ["src/**/*"]
+}
