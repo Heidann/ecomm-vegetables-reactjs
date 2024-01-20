@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useState } from "react";
 import "./style.scss";
 import {
   FaFacebookF,
@@ -7,11 +7,50 @@ import {
   FaTwitter,
   FaUser,
   FaInbox,
+  FaCartShopping,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { formatter } from "utils/fomater";
+import { ROUTER } from "utils/router";
 
 const Header = () => {
+  const [menus, setMenus] = useState([
+    {
+      name: "Trang chủ",
+      path: ROUTER.USER.HOME,
+    },
+    {
+      name: "Cửa Hàng",
+      path: ROUTER.USER.PRODUCTS,
+    },
+    {
+      name: "Sản Phẩm",
+      path: "",
+      isShowSubMenu: false,
+      child: [
+        {
+          name: "Thịt",
+          path: "",
+        },
+        {
+          name: "Rau củ",
+          path: "",
+        },
+        {
+          name: "Thức ăn nhanh",
+          path: "",
+        },
+      ],
+    },
+    {
+      name: "Bài Viết",
+      path: "",
+    },
+    {
+      name: "Liên Hệ",
+      path: "",
+    },
+  ]);
   return (
     <>
       <div className="header__top">
@@ -62,9 +101,38 @@ const Header = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-xl-3 col-lg-3">LOGO</div>
-          <div className="col-xl-6 col-lg-6">MENUS</div>
-          <div className="col-xl-3 col-lg-3">PHONE</div>
+          <div className="col-xl-3 col-lg-3">
+            <div className="header__logo">
+              <h1>VEGETABLESHOP</h1>
+            </div>
+          </div>
+          <div className="col-xl-6 col-lg-6">
+            <nav className="header__menu">
+              <ul>
+                {/* load dữ liệu lên menu */}
+                {menus?.map((item, menukey) => (
+                  <li key={menukey} className={menukey === 0 ? "active" : ""}>
+                    <Link to={item?.path}>{item?.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <div className="col-xl-3 col-lg-3">
+            <div className="header__cart">
+              <div className="header__cart_price">
+                <span>{formatter(1030000)}</span>
+              </div>
+              <ul>
+                <li>
+                  <Link to="#">
+                    <FaCartShopping />
+                    <span>5</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -59,3 +59,65 @@
     }
   }
 }
+.header__logo {
+  padding: 15px 0;
+}
+.header__menu {
+  padding: 24px 0;
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: map-get($map: $theme-colors, $key: bold-text);
+        transition: all 0.3s;
+        padding: 5px 0;
+        display: block;
+      }
+    }
+    .active a {
+      color: map-get($map: $theme-colors, $key: main);
+    }
+  }
+}
+
+.header__cart {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 24px 0;
+
+  ul {
+    display: flex;
+    margin-right: 25px;
+    li {
+      list-style: none;
+      position: relative;
+      margin-left: 20px;
+    }
+    svg {
+      font-size: 25px;
+      color: map-get($map: $theme-colors, $key: normal-text);
+    }
+    span {
+      color: white;
+      background: map-get($map: $theme-colors, $key: main);
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      display: inline-block;
+      text-align: center;
+      line-height: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      left: 20px;
+      top: -8px;
+    }
+  }
+}
