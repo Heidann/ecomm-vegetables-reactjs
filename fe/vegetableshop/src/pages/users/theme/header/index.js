@@ -82,11 +82,7 @@ const Header = () => {
                     <FaLinkedinIn />
                   </Link>
                 </li>
-                <li>
-                  <Link to="">
-                    <FaTwitter />
-                  </Link>
-                </li>
+
                 <li>
                   <Link to="">
                     <FaUser />
