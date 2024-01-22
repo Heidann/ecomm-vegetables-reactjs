@@ -66,6 +66,14 @@ body {
     flex: 0 0 50%;
     max-width: 50%;
   }
+  .col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 @include Responsive($TABLET_DEVICE) {
   .col-md-6 {
@@ -91,5 +99,6 @@ body {
   .col-xs-12 {
     flex: 0 0 100%;
     max-width: 100%;
+    position: sticky;
   }
 }

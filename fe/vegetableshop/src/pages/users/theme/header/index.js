@@ -8,13 +8,16 @@ import {
   FaUser,
   FaInbox,
   FaCartShopping,
+  FaBars,
+  FaPhone,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { formatter } from "utils/fomater";
 import { ROUTER } from "utils/router";
 
 const Header = () => {
-  const [menus, setMenus] = useState([
+  // data menu
+  const [menus] = useState([
     {
       name: "Trang chủ",
       path: ROUTER.USER.HOME,
@@ -51,6 +54,8 @@ const Header = () => {
       path: "",
     },
   ]);
+  // data categries
+  const [isShowCategories, setShowCategories] = useState(true);
   return (
     <>
       <div className="header__top">
@@ -136,6 +141,72 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row hero__categories_container">
+          <div className="col-lg-3 hero__categories">
+            <div
+              className="hero__categories__all"
+              onClick={() => setShowCategories(!isShowCategories)}
+            >
+              <FaBars />
+              Danh sách sản Phẩm
+            </div>
+
+            <ul className={isShowCategories ? "" : "hidden"}>
+              <li>
+                <Link to={"#"}>Thịt tươi</Link>
+              </li>
+              <li>
+                <Link to={"#"}>Rau củ</Link>
+              </li>{" "}
+              <li>
+                <Link to={"#"}>Trái cây</Link>
+              </li>{" "}
+              <li>
+                <Link to={"#"}>Hải sản</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-9 hero__search_container">
+            <div className="hero__search">
+              <div className="hero__search__form">
+                <form>
+                  <input
+                    type=""
+                    name=""
+                    value={""}
+                    placeholder="Bạn đang tìm gì?"
+                  />
+                  <button type="submit">Tìm kiếm</button>
+                </form>
+              </div>
+              <div className="hero__search__phone">
+                <div className="hero__search__phone__icon">
+                  <FaPhone />
+                </div>
+                <div className="hero__search__phone__text">
+                  <p>0948.XXX.XXX</p>
+                  <span>Hỗ trợ 24/7</span>
+                </div>
+              </div>
+            </div>
+            <div className="hero__item">
+              <div className="hero__text">
+                <span>Trái cây tươi</span>
+                <h2>
+                  Rau quả <br />
+                  sạch 100%
+                </h2>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <Link to={""} className="primary-btn">
+                  Mua ngay
+                </Link>
+              </div>
             </div>
           </div>
         </div>
