@@ -151,6 +151,8 @@ $bannerImg: "/assets/users/image/hero/banner.jpg";
   }
 }
 .hero__categories_container {
+  max-width: 1200px !important;
+
   .hero__categories {
     position: relative;
     .hero__categories__all {
@@ -204,7 +206,8 @@ $bannerImg: "/assets/users/image/hero/banner.jpg";
   }
   .hero__search_container {
     .hero__search__form {
-      width: 610px;
+      width: 700px;
+
       height: 50px;
       float: left;
       padding-left: 15px;
@@ -274,11 +277,12 @@ $bannerImg: "/assets/users/image/hero/banner.jpg";
       }
     }
     .hero__item {
-      margin-left: 15px;
+      margin-left: 5px;
+      padding-left: 15px;
       background-image: url($bannerImg);
       background-image: no-repeat;
       background-size: cover;
-      height: 410px;
+      height: 430px;
       display: flex;
       align-items: center;
       width: 100%;
